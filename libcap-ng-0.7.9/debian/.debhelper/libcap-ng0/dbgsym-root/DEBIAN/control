@@ -1,0 +1,13 @@
+Package: libcap-ng0-dbgsym
+Source: libcap-ng
+Version: 0.7.9-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Installed-Size: 28
+Depends: libcap-ng0 (= 0.7.9-1)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libcap-ng0
+Build-Ids: 19551a913b113cedbecebad75000ce4d8e8acf41

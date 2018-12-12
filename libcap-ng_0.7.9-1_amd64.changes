@@ -1,0 +1,56 @@
+Format: 1.8
+Date: Sat, 28 Apr 2018 17:10:47 +0200
+Source: libcap-ng
+Binary: libcap-ng-dev libcap-ng0 libcap-ng-utils python-cap-ng python3-cap-ng
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64
+Version: 0.7.9-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Changed-By: Pierre Chifflier <pollux@debian.org>
+Description:
+ libcap-ng-dev - Development and header files for libcap-ng
+ libcap-ng-utils - Utilities for analysing and setting file capabilities
+ libcap-ng0 - An alternate POSIX capabilities library
+ python-cap-ng - Python bindings for libcap-ng
+ python3-cap-ng - Python3 bindings for libcap-ng
+Closes: 725926 829061 896314
+Changes:
+ libcap-ng (0.7.9-1) unstable; urgency=medium
+ .
+   * New upstream version 0.7.9 (Closes: #896314, #725926)
+   * Add symbols file (Closes: #829061)
+Checksums-Sha1:
+ 1306c03216afd85ed6d084db712635532247f646 111272 libcap-ng-dev_0.7.9-1_amd64.deb
+ 36f7962a4c3c11bceb8a9687dbf68cd4c7b3c23a 21036 libcap-ng-utils-dbgsym_0.7.9-1_amd64.deb
+ 18bb8c3b32b6a7db29802b7e76d40534ac646cfb 20512 libcap-ng-utils_0.7.9-1_amd64.deb
+ 8cd5c587789061e9113f957102bf284f3ee5aac1 13924 libcap-ng0-dbgsym_0.7.9-1_amd64.deb
+ 50741c1f1715f5a953fe871ecdf46f5da26d155a 15160 libcap-ng0_0.7.9-1_amd64.deb
+ a64551ab7f44e8c7b2687ba7fcf2197b3fcd8306 8474 libcap-ng_0.7.9-1_amd64.buildinfo
+ 03e857f8a07e9bafd0391deb24c54c9b3d90d962 24224 python-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ 5195a0a13d5d9aa1391be9753b2f17166aaabb55 22720 python-cap-ng_0.7.9-1_amd64.deb
+ b49849fc5e8d76b8a4c6e010ed8216f7f11cc14d 24296 python3-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ de04a8ff5cb11a740b659e60be7c2cb8923aa8bc 23000 python3-cap-ng_0.7.9-1_amd64.deb
+Checksums-Sha256:
+ 374a8fb8422ce62ad4076fc8bec069827b0d542148faf6a1c4be4f9d347b480c 111272 libcap-ng-dev_0.7.9-1_amd64.deb
+ 03dbdcc7db003187e633839baf4ce1b17ee24179fa45d0409eb3446895a5a056 21036 libcap-ng-utils-dbgsym_0.7.9-1_amd64.deb
+ eba9bca8ff525a39dc0af7becab87e7fa5473489a990480703ee23da89dc46f2 20512 libcap-ng-utils_0.7.9-1_amd64.deb
+ 9a8a98c2a810f13e90d28bb21a64c2880fe6a722a1f6f4ee014672e0c0a2003b 13924 libcap-ng0-dbgsym_0.7.9-1_amd64.deb
+ b711fb05db84a2e7a41af740c6a1fb336175329f399a610d28c26acebe596ee7 15160 libcap-ng0_0.7.9-1_amd64.deb
+ afd2ad2f4f54a62227670284f213a7d675c59e96536dcd48576b8ce1bbcc0dee 8474 libcap-ng_0.7.9-1_amd64.buildinfo
+ 8332c1bf421c351ecf9d16a96bf37bb8aa4246442a08290e7d61e2380210852b 24224 python-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ 8ce2bcba81bd7678e1a24d0f0c83de88dbb52f0b6353206058a743bbc8d3d06e 22720 python-cap-ng_0.7.9-1_amd64.deb
+ a1ed553bb97c4d8ce45c233869c799b67a94e332cd4abd8048b6fa7050bfb2ed 24296 python3-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ 6fac2add27b65cd7c7a70c7b3f6273595d761811d1d68e7cb7628698e5bc626a 23000 python3-cap-ng_0.7.9-1_amd64.deb
+Files:
+ 8a3ef7cb44510f30b38e2fafc0878a59 111272 libdevel optional libcap-ng-dev_0.7.9-1_amd64.deb
+ 684d38d1d2811780e940524debb5dfe5 21036 debug optional libcap-ng-utils-dbgsym_0.7.9-1_amd64.deb
+ 05cddd830da3c4b8a3d96e942549bcfd 20512 admin optional libcap-ng-utils_0.7.9-1_amd64.deb
+ de3c8853dae476f4037e7cd9bc1b6d8d 13924 debug optional libcap-ng0-dbgsym_0.7.9-1_amd64.deb
+ d074c2282b374abd1c6ee120aa2245be 15160 libs optional libcap-ng0_0.7.9-1_amd64.deb
+ de211d1592238a0fe1d7379415c572db 8474 libs optional libcap-ng_0.7.9-1_amd64.buildinfo
+ 833defac084540aee70820d437b61f40 24224 debug optional python-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ 2d7fdc19b2a41c17fbfcf454406d8949 22720 python optional python-cap-ng_0.7.9-1_amd64.deb
+ c1cd43a2461a8fe4131ac7f4866c282f 24296 debug optional python3-cap-ng-dbgsym_0.7.9-1_amd64.deb
+ 813e6e35908fc5fb90500e2b57a4eaa6 23000 python optional python3-cap-ng_0.7.9-1_amd64.deb

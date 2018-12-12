@@ -1,0 +1,10 @@
+libcap-ng-dev_0.7.9-1_amd64.deb libdevel optional
+libcap-ng-utils-dbgsym_0.7.9-1_amd64.deb debug optional automatic=yes
+libcap-ng-utils_0.7.9-1_amd64.deb admin optional
+libcap-ng0-dbgsym_0.7.9-1_amd64.deb debug optional automatic=yes
+libcap-ng0_0.7.9-1_amd64.deb libs optional
+libcap-ng_0.7.9-1_amd64.buildinfo libs optional
+python-cap-ng-dbgsym_0.7.9-1_amd64.deb debug optional automatic=yes
+python-cap-ng_0.7.9-1_amd64.deb python optional
+python3-cap-ng-dbgsym_0.7.9-1_amd64.deb debug optional automatic=yes
+python3-cap-ng_0.7.9-1_amd64.deb python optional

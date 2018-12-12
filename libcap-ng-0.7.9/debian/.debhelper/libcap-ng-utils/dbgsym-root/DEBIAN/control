@@ -1,0 +1,12 @@
+Package: libcap-ng-utils-dbgsym
+Source: libcap-ng
+Version: 0.7.9-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Pierre Chifflier <pollux@debian.org>
+Installed-Size: 57
+Depends: libcap-ng-utils (= 0.7.9-1)
+Section: debug
+Priority: optional
+Description: debug symbols for libcap-ng-utils
+Build-Ids: 62e3a298d68d1570e66467d8ae3297f72ed0cd42 940aef5b1045d0b69e71b13f8d27023ff0c4b029 daa3b2737eb2dd45183ddd1f146c49b88b2d4386 e3470bc1e40ba7b77390f5bc32d0fe40682cf457

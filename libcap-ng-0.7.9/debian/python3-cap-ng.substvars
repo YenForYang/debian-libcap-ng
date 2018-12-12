@@ -1,0 +1,6 @@
+python3:Depends=python3 (<< 3.8), python3 (>= 3.7~), python3:any, python3:any (>= 3.4~)
+python3:Provides=python3.7-cap-ng
+python3:Versions=3.7
+shlibs:Depends=libc6 (>= 2.4), libcap-ng0 (>= 0.7.9)
+misc:Depends=
+misc:Pre-Depends=

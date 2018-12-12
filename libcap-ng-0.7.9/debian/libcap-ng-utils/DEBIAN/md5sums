@@ -1,0 +1,11 @@
+9eb8bfe79475db3646cf437fdb348aec  usr/bin/x86_64-linux-gnu-captest
+5a5f3f4ecf99855a171f89b83b3c931e  usr/bin/x86_64-linux-gnu-filecap
+8efd0383fe03ab893bf9e866866e77a2  usr/bin/x86_64-linux-gnu-netcap
+8e1b5760e1007845d5945d560e56d720  usr/bin/x86_64-linux-gnu-pscap
+ff9e60f23c4aaec39d67bb2318480588  usr/share/doc/libcap-ng-utils/changelog.Debian.gz
+5de0e2f5bcb06abdcc04b78b06a72e87  usr/share/doc/libcap-ng-utils/changelog.gz
+942fcc15635013ef29d9204a2a2eac7f  usr/share/doc/libcap-ng-utils/copyright
+08a188e160bb635f0c73ccdce461af17  usr/share/man/man8/x86_64-linux-gnu-captest.8.gz
+448c433056d652ab5cacbf7caa349918  usr/share/man/man8/x86_64-linux-gnu-filecap.8.gz
+3ccc17cc78eaf4f071fe69c4869443ef  usr/share/man/man8/x86_64-linux-gnu-netcap.8.gz
+8f98487c2434a229f60d5809141fa32b  usr/share/man/man8/x86_64-linux-gnu-pscap.8.gz

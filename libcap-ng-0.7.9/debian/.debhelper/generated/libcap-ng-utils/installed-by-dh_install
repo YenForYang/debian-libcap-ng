@@ -1,0 +1,8 @@
+debian/tmp/usr/bin/x86_64-linux-gnu-captest
+debian/tmp/usr/bin/x86_64-linux-gnu-filecap
+debian/tmp/usr/bin/x86_64-linux-gnu-netcap
+debian/tmp/usr/bin/x86_64-linux-gnu-pscap
+debian/tmp/usr/share/man/man8/x86_64-linux-gnu-captest.8
+debian/tmp/usr/share/man/man8/x86_64-linux-gnu-filecap.8
+debian/tmp/usr/share/man/man8/x86_64-linux-gnu-netcap.8
+debian/tmp/usr/share/man/man8/x86_64-linux-gnu-pscap.8

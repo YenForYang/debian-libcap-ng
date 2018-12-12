@@ -1,0 +1,549 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package libcap-ng
+dpkg-buildpackage: info: source version 0.7.9-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Pierre Chifflier <pollux@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with=python2,python3,autoreconf
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+dh_auto_clean
+rm -rf debian/tmp-python-cap-ng
+make[1]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+   dh_clean
+FAKEROOTKEY=910511605 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build --with=python2,python3,autoreconf
+   dh_update_autotools_config
+   dh_autoreconf
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:41: installing './compile'
+configure.ac:40: installing './missing'
+bindings/python/Makefile.am: installing './depcomp'
+bindings/src/Makefile.am:24: warning: variable 'SWIG_SOURCES' is defined but no program or
+bindings/src/Makefile.am:24: library has 'SWIG' as canonical name (possible typo)
+   dh_auto_configure
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+configure: loading site script /usr/share/config.site
+Configuring libcap-ng
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking target system type... (cached) x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether icc accepts -g... (cached) yes
+checking for icc option to accept ISO C89... none needed
+checking whether icc understands -c and -o together... (cached) yes
+checking dependency style of icc... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for grep that handles long lines and -e... (cached) /bin/grep
+checking for egrep... (cached) /bin/grep -E
+checking for fgrep... (cached) /bin/grep -F
+checking for ld used by icc... (cached) xild -m elf_x86_64
+checking if the linker (xild -m elf_x86_64) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/x86_64-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-linux-gnu-nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for xild -m elf_x86_64 option to reload object files... (cached) -r
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... (cached) dlltool
+checking how to associate runtime and link libraries... (cached) printf %s\n
+checking for archiver @FILE support... (cached) @
+checking for strip... (cached) x86_64-linux-gnu-strip
+checking for ranlib... (cached) /usr/bin/x86_64-linux-gnu-ranlib
+checking command to parse /usr/bin/x86_64-linux-gnu-nm -B output from icc object... ok
+checking for sysroot... no
+checking for a working dd... (cached) /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... (cached) mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... icc -E
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... (cached) .libs
+checking if icc supports -fno-rtti -fno-exceptions... (cached) yes
+checking for icc option to produce PIC... (cached) -fpic
+checking if icc PIC flag -fpic works... (cached) yes
+checking if icc static flag -static works... (cached) yes
+checking if icc supports -c -o file.o... (cached) yes
+checking if icc supports -c -o file.o... (cached) yes
+checking whether the icc linker (xild -m elf_x86_64 -m elf_x86_64) supports shared libraries... xild: warning #10013: no objects specified for multi-file optimization
+xild: executing 'ld'
+yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+.
+Checking for programs
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether icc accepts -g... (cached) yes
+checking for icc option to accept ISO C89... (cached) none needed
+checking whether icc understands -c and -o together... (cached) yes
+checking dependency style of icc... (cached) gcc3
+checking for gawk... (cached) gawk
+.
+Checking for header files
+checking for ANSI C header files... (cached) yes
+checking linux/capability.h usability... yes
+checking linux/capability.h presence... yes
+checking for linux/capability.h... yes
+checking for sys/xattr.h... (cached) yes
+checking for linux/securebits.h... (cached) yes
+checking for an ANSI C-conforming const... (cached) yes
+checking for inline... (cached) inline
+checking for sys/syscall.h... (cached) yes
+checking for swig... yes
+checking whether to create python bindings... testing
+checking for python... /usr/bin/python
+checking for python version... (cached) 3.7
+checking for python platform... (cached) linux
+checking for python script directory... ${prefix}/lib/python2.7/dist-packages
+checking for python extension module directory... ${exec_prefix}/lib/python2.7/dist-packages
+configure: Python bindings will be built
+checking whether to create python3 bindings... investigating
+checking for python3-config... /usr/bin/python3-config
+Python3 bindings WILL be built
+checking for python3... /usr/bin/python3
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating src/libcap-ng.pc
+config.status: creating src/test/Makefile
+config.status: creating bindings/Makefile
+config.status: creating bindings/python/Makefile
+config.status: creating bindings/python3/Makefile
+config.status: creating bindings/src/Makefile
+config.status: creating bindings/python/test/Makefile
+config.status: creating utils/Makefile
+config.status: creating m4/Makefile
+config.status: creating docs/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+.
+
+
+  libcap-ng Version:      0.7.9
+  Target:                 x86_64-pc-linux-gnu
+  Installation prefix:    /usr
+  Compiler:               icc
+  Compiler flags:
+                          -g -O2
+                          -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=.
+                          -fstack-protector-strong -Wformat
+                          -Werror=format-security -march=native -pipe
+
+   dh_auto_build
+	make -j1
+make[1]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make  all-recursive
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+Making all in src
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+Making all in test
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+/bin/bash ../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o cap-ng.lo cap-ng.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c cap-ng.c  -fpic -o .libs/cap-ng.o
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c cap-ng.c -o cap-ng.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I..  -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lookup_table.lo lookup_table.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c lookup_table.c  -fpic -o .libs/lookup_table.o
+lookup_table.c(115): warning #2332: a value of type "const char *" cannot be assigned to an entity of type "char *" (dropping qualifiers)
+  	ptr = capng_lookup_number(captab, captab_msgstr.str,
+  	    ^
+
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I.. -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c lookup_table.c -o lookup_table.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link icc -fPIC -DPIC -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wl,-z,relro -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o libcap-ng.la -rpath /usr/lib/x86_64-linux-gnu cap-ng.lo lookup_table.lo  
+libtool: link: icc -shared  -fpic  .libs/cap-ng.o .libs/lookup_table.o    -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,libcap-ng.so.0 -o .libs/libcap-ng.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libcap-ng.so.0" && ln -s "libcap-ng.so.0.0.0" "libcap-ng.so.0")
+libtool: link: (cd ".libs" && rm -f "libcap-ng.so" && ln -s "libcap-ng.so.0.0.0" "libcap-ng.so")
+libtool: link: xiar cru .libs/libcap-ng.a  cap-ng.o lookup_table.o
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: /usr/bin/x86_64-linux-gnu-ranlib .libs/libcap-ng.a
+libtool: link: ( cd ".libs" && rm -f "libcap-ng.la" && ln -s "../libcap-ng.la" "libcap-ng.la" )
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+Making all in utils
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+icc -DHAVE_CONFIG_H -I. -I..  -I.. -I../src -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o pscap.o pscap.c
+/bin/bash ../libtool  --tag=CC   --mode=link icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o pscap pscap.o  -L../src -lcap-ng
+libtool: link: icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/pscap pscap.o  -L../src /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs/libcap-ng.so
+icc -DHAVE_CONFIG_H -I. -I..  -I.. -I../src -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o netcap.o netcap.c
+icc -DHAVE_CONFIG_H -I. -I..  -I.. -I../src -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o proc-llist.o proc-llist.c
+/bin/bash ../libtool  --tag=CC   --mode=link icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o netcap netcap.o proc-llist.o  -L../src -lcap-ng
+libtool: link: icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/netcap netcap.o proc-llist.o  -L../src /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs/libcap-ng.so
+icc -DHAVE_CONFIG_H -I. -I..  -I.. -I../src -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o filecap.o filecap.c
+/bin/bash ../libtool  --tag=CC   --mode=link icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o filecap filecap.o  -L../src -lcap-ng
+libtool: link: icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/filecap filecap.o  -L../src /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs/libcap-ng.so
+icc -DHAVE_CONFIG_H -I. -I..  -I.. -I../src -Wdate-time -D_FORTIFY_SOURCE=2 -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o captest.o captest.c
+captest.c(74): warning #2218: result of call is not used
+  			setuid(0);
+  			^
+
+captest.c(78): warning #2218: result of call is not used
+  				setgid(0);
+  				^
+
+captest.c(191): warning #2218: result of call is not used
+  			system("/usr/bin/captest --no-child --text");
+  			^
+
+captest.c(193): warning #2218: result of call is not used
+  			system("/usr/bin/captest --no-child");
+  			^
+
+/bin/bash ../libtool  --tag=CC   --mode=link icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o captest captest.o  -L../src -lcap-ng
+libtool: link: icc -W -Wall -Wshadow -Wformat -Wundef -D_GNU_SOURCE -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax -o .libs/captest captest.o  -L../src /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs/libcap-ng.so
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+Making all in m4
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+Making all in docs
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+Making all in bindings
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+Making all in src
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+Making all in python
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+Making all in test
+make[5]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[5]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+cat /usr/include/linux/capability.h | grep '^#define CAP'  | grep -v '[()]' > caps.h
+cat ../../src/cap-ng.h | grep -v '_state' > capng.h
+swig -o capng_wrap.c -python -I. -I../.. -I/usr/include/python3.7m ./../src/capng_swig.i 
+./../src/capng_swig.i:35: Warning 116: %except is deprecated.  Use %exception instead.
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../..  -I. -I../.. -I/usr/include/python3.7m -Wdate-time -D_FORTIFY_SOURCE=2 -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o _capng_la-capng_wrap.lo `test -f 'capng_wrap.c' || echo './'`capng_wrap.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../.. -I. -I../.. -I/usr/include/python3.7m -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c capng_wrap.c  -fpic -o .libs/_capng_la-capng_wrap.o
+/bin/bash ../../libtool  --tag=CC   --mode=link icc -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -module -avoid-version -Wl,-z,relro -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o _capng.la -rpath /usr/lib/python2.7/dist-packages _capng_la-capng_wrap.lo ../../src/libcap-ng.la 
+libtool: link: icc -shared  -fpic  .libs/_capng_la-capng_wrap.o   -Wl,-rpath -Wl,/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs ../../src/.libs/libcap-ng.so  -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,_capng.so -o .libs/_capng.so
+libtool: link: ( cd ".libs" && rm -f "_capng.la" && ln -s "../_capng.la" "_capng.la" )
+make[5]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+Making all in python3
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+cat /usr/include/linux/capability.h | grep '^#define CAP'  | grep -v '[()]' > caps.h
+cat ../../src/cap-ng.h | grep -v '_state' > capng.h
+swig -o capng_wrap.c -python -py3 -modern -I. -I../.. -I/usr/include/python3.7m -I/usr/include/python3.7m ./../src/capng_swig.i
+./../src/capng_swig.i:35: Warning 116: %except is deprecated.  Use %exception instead.
+/bin/bash ../../libtool  --tag=CC   --mode=compile icc -DHAVE_CONFIG_H -I. -I../..  -I. -I../.. -I/usr/include/python3.7m -I/usr/include/python3.7m -Wdate-time -D_FORTIFY_SOURCE=2 -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o _capng_la-capng_wrap.lo `test -f 'capng_wrap.c' || echo './'`capng_wrap.c
+libtool: compile:  icc -DHAVE_CONFIG_H -I. -I../.. -I. -I../.. -I/usr/include/python3.7m -I/usr/include/python3.7m -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c capng_wrap.c  -fpic -o .libs/_capng_la-capng_wrap.o
+/bin/bash ../../libtool  --tag=CC   --mode=link icc -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -module -avoid-version -Wl,-z,relro -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o _capng.la -rpath /usr/lib/python3.7/site-packages _capng_la-capng_wrap.lo ../../src/libcap-ng.la ../../src/libcap-ng.la
+libtool: link: icc -shared  -fpic  .libs/_capng_la-capng_wrap.o   -Wl,-rpath -Wl,/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/.libs ../../src/.libs/libcap-ng.so  -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,_capng.so -o .libs/_capng.so
+libtool: link: ( cd ".libs" && rm -f "_capng.la" && ln -s "../_capng.la" "_capng.la" )
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[1]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+# do nothing, some tests are failing because of failing relink
+:
+make[1]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+ fakeroot debian/rules binary
+dh binary --with=python2,python3,autoreconf
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   dh_auto_install
+	make -j1 install DESTDIR=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+Making install in src
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+Making install in test
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/test'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/bash ../libtool   --mode=install /usr/bin/install   libcap-ng.la '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/libcap-ng.so.0.0.0 /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0
+libtool: install: (cd /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libcap-ng.so.0.0.0 libcap-ng.so.0 || { rm -f libcap-ng.so.0 && ln -s libcap-ng.so.0.0.0 libcap-ng.so.0; }; })
+libtool: install: (cd /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu && { ln -s -f libcap-ng.so.0.0.0 libcap-ng.so || { rm -f libcap-ng.so && ln -s libcap-ng.so.0.0.0 libcap-ng.so; }; })
+libtool: install: /usr/bin/install .libs/libcap-ng.lai /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.la
+libtool: install: /usr/bin/install .libs/libcap-ng.a /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.a
+libtool: install: chmod 644 /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.a
+libtool: install: /usr/bin/x86_64-linux-gnu-ranlib /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/include'
+ /usr/bin/install -m 644 cap-ng.h '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/include'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+ /usr/bin/install -m 644 libcap-ng.pc '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig'
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src'
+Making install in utils
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install pscap '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-pscap'
+libtool: warning: '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/libcap-ng.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/pscap /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-pscap
+  /bin/bash ../libtool   --mode=install /usr/bin/install netcap '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-netcap'
+libtool: warning: '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/libcap-ng.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/netcap /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-netcap
+  /bin/bash ../libtool   --mode=install /usr/bin/install filecap '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-filecap'
+libtool: warning: '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/libcap-ng.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/filecap /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-filecap
+  /bin/bash ../libtool   --mode=install /usr/bin/install captest '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-captest'
+libtool: warning: '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/src/libcap-ng.la' has not been installed in '/usr/lib/x86_64-linux-gnu'
+libtool: install: /usr/bin/install .libs/captest /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/bin/./x86_64-linux-gnu-captest
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man8'
+ /usr/bin/install -m 644 'pscap.8' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man8/x86_64-linux-gnu-pscap.8'
+ /usr/bin/install -m 644 'netcap.8' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man8/x86_64-linux-gnu-netcap.8'
+ /usr/bin/install -m 644 'filecap.8' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man8/x86_64-linux-gnu-filecap.8'
+ /usr/bin/install -m 644 'captest.8' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man8/x86_64-linux-gnu-captest.8'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/utils'
+Making install in m4
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/aclocal'
+ /usr/bin/install -m 644 cap-ng.m4 '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/aclocal'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/m4'
+Making install in docs
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3'
+ /usr/bin/install -m 644 'capng_clear.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_clear.3'
+ /usr/bin/install -m 644 'capng_fill.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_fill.3'
+ /usr/bin/install -m 644 'capng_setpid.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_setpid.3'
+ /usr/bin/install -m 644 'capng_get_caps_process.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_get_caps_process.3'
+ /usr/bin/install -m 644 'capng_update.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_update.3'
+ /usr/bin/install -m 644 'capng_updatev.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_updatev.3'
+ /usr/bin/install -m 644 'capng_apply.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_apply.3'
+ /usr/bin/install -m 644 'capng_lock.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_lock.3'
+ /usr/bin/install -m 644 'capng_change_id.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_change_id.3'
+ /usr/bin/install -m 644 'capng_get_caps_fd.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_get_caps_fd.3'
+ /usr/bin/install -m 644 'capng_set_caps_fd.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_set_caps_fd.3'
+ /usr/bin/install -m 644 'capng_have_capabilities.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_have_capabilities.3'
+ /usr/bin/install -m 644 'capng_have_capability.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_have_capability.3'
+ /usr/bin/install -m 644 'capng_print_caps_numeric.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_print_caps_numeric.3'
+ /usr/bin/install -m 644 'capng_print_caps_text.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_print_caps_text.3'
+ /usr/bin/install -m 644 'capng_name_to_capability.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_name_to_capability.3'
+ /usr/bin/install -m 644 'capng_capability_to_name.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_capability_to_name.3'
+ /usr/bin/install -m 644 'capng_save_state.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_save_state.3'
+ /usr/bin/install -m 644 'capng_restore_state.3' '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/share/man/man3/x86_64-linux-gnu-capng_restore_state.3'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/docs'
+Making install in bindings
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+Making install in src
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/src'
+Making install in python
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+Making install in test
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[5]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python/test'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+make[5]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install   _capng.la '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages'
+libtool: warning: relinking '_capng.la'
+libtool: install: (cd /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python; /bin/bash "/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/libtool"  --tag CC --mode=relink icc -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -module -avoid-version -Wl,-z,relro -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o _capng.la -rpath /usr/lib/python2.7/dist-packages _capng_la-capng_wrap.lo ../../src/libcap-ng.la -inst-prefix-dir /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp)
+libtool: relink: icc -shared  -fpic  .libs/_capng_la-capng_wrap.o   -L/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -lcap-ng  -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,_capng.so -o .libs/_capng.so
+libtool: install: /usr/bin/install .libs/_capng.soT /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages/_capng.so
+libtool: install: /usr/bin/install .libs/_capng.lai /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages/_capng.la
+libtool: warning: remember to run 'libtool --finish /usr/lib/python2.7/dist-packages'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages'
+ /usr/bin/install -m 644 capng.py '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python2.7/dist-packages'
+Byte-compiling python modules...
+capng.py
+Byte-compiling python modules (optimized versions) ...
+capng.py
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python'
+Making install in python3
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install   _capng.la '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages'
+libtool: warning: relinking '_capng.la'
+libtool: install: (cd /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3; /bin/bash "/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/libtool"  --tag CC --mode=relink icc -shared -g -O2 -fdebug-prefix-map=/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -module -avoid-version -Wl,-z,relro -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -o _capng.la -rpath /usr/lib/python3.7/site-packages _capng_la-capng_wrap.lo ../../src/libcap-ng.la ../../src/libcap-ng.la -inst-prefix-dir /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp)
+libtool: relink: icc -shared  -fpic  .libs/_capng_la-capng_wrap.o   -L/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -lcap-ng  -g -O2 -fstack-protector-strong -march=native -Wl,-z -Wl,relro -Wl,-z -Wl,relro -Wl,--as-needed -Wl,--gc-sections -Wl,--relax   -Wl,-soname -Wl,_capng.so -o .libs/_capng.so
+libtool: install: /usr/bin/install .libs/_capng.soT /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages/_capng.so
+libtool: install: /usr/bin/install .libs/_capng.lai /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages/_capng.la
+libtool: warning: remember to run 'libtool --finish /usr/lib/python3.7/site-packages'
+ /bin/mkdir -p '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages'
+ /usr/bin/install -m 644 capng.py '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/python3.7/site-packages'
+Byte-compiling python modules...
+capng.py
+-c:2: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+Byte-compiling python modules (optimized versions) ...
+capng.py
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings/python3'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[4]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/bindings'
+make[2]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[3]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[2]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+make[1]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+   debian/rules override_dh_install
+make[1]: Entering directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+mkdir -p /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/lib/x86_64-linux-gnu && \
+mv /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/usr/lib/x86_64-linux-gnu/lib*.so.0* /dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9/debian/tmp/lib/x86_64-linux-gnu/; \
+rm debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.so; \
+ln -s ../../../lib/x86_64-linux-gnu/libcap-ng.so.0.0.0 debian/tmp/usr/lib/x86_64-linux-gnu/libcap-ng.so; \
+dh_install --exclude=.la
+make[1]: Leaving directory '/dev/shm/all/libcap-ng-dev/libcap-ng-0.7.9'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_python2
+I: dh_python2 fs:329: renaming _capng.so to _capng.x86_64-linux-gnu.so
+   dh_python3
+I: dh_python3 fs:329: renaming _capng.so to _capng.cpython-37m-x86_64-linux-gnu.so
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libcap-ng0/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0 was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: debian/python3-cap-ng/usr/lib/python3/dist-packages/_capng.cpython-37m-x86_64-linux-gnu.so contains an unresolvable reference to symbol PyObject_Call: it's probably a plugin
+dpkg-shlibdeps: warning: 53 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python3-cap-ng/usr/lib/python3/dist-packages/_capng.cpython-37m-x86_64-linux-gnu.so was not linked against libpthread.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python3-cap-ng/usr/lib/python3/dist-packages/_capng.cpython-37m-x86_64-linux-gnu.so was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: debian/python-cap-ng/usr/lib/python2.7/dist-packages/_capng.x86_64-linux-gnu.so contains an unresolvable reference to symbol PyUnicode_FromString: it's probably a plugin
+dpkg-shlibdeps: warning: 54 other similar warnings have been skipped (use -v to see them all)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-cap-ng/usr/lib/python2.7/dist-packages/_capng.x86_64-linux-gnu.so was not linked against libpthread.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-cap-ng/usr/lib/python2.7/dist-packages/_capng.x86_64-linux-gnu.so was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libcap-ng-utils/usr/bin/x86_64-linux-gnu-filecap debian/libcap-ng-utils/usr/bin/x86_64-linux-gnu-captest debian/libcap-ng-utils/usr/bin/x86_64-linux-gnu-netcap debian/libcap-ng-utils/usr/bin/x86_64-linux-gnu-pscap were not linked against libdl.so.2 (they use none of the library's symbols)
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: package python3-cap-ng: substitution variable ${python3:Versions} unused, but is defined
+dpkg-gencontrol: warning: package python-cap-ng: substitution variable ${python:Provides} unused, but is defined
+dpkg-gencontrol: warning: package python-cap-ng: substitution variable ${python:Versions} unused, but is defined
+dpkg-gencontrol: warning: package python-cap-ng: substitution variable ${python:Provides} unused, but is defined
+dpkg-gencontrol: warning: package python-cap-ng: substitution variable ${python:Versions} unused, but is defined
+dpkg-gencontrol: warning: package python3-cap-ng: substitution variable ${python3:Versions} unused, but is defined
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'libcap-ng-dev' in '../libcap-ng-dev_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'python3-cap-ng-dbgsym' in '../python3-cap-ng-dbgsym_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'libcap-ng-utils-dbgsym' in '../libcap-ng-utils-dbgsym_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'python-cap-ng-dbgsym' in '../python-cap-ng-dbgsym_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'libcap-ng0-dbgsym' in '../libcap-ng0-dbgsym_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'libcap-ng-utils' in '../libcap-ng-utils_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'python3-cap-ng' in '../python3-cap-ng_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'python-cap-ng' in '../python-cap-ng_0.7.9-1_amd64.deb'.
+dpkg-deb: building package 'libcap-ng0' in '../libcap-ng0_0.7.9-1_amd64.deb'.
+FAKEROOTKEY=353515449 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../libcap-ng_0.7.9-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian libcap-ng_0.7.9-1_amd64.changes ...
+W: libcap-ng-utils: hardening-no-pie usr/bin/x86_64-linux-gnu-captest
+W: libcap-ng-utils: hardening-no-pie usr/bin/x86_64-linux-gnu-filecap
+W: libcap-ng-utils: hardening-no-pie usr/bin/x86_64-linux-gnu-netcap
+W: libcap-ng-utils: hardening-no-pie usr/bin/x86_64-linux-gnu-pscap
+W: libcap-ng0: description-synopsis-starts-with-article
+Finished running lintian.
